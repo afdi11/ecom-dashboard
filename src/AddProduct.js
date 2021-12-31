@@ -2,7 +2,7 @@ import React from 'react';
 function AddProduct(){
     return(
         <div>
-            <h1>Halaman AddProduct</h1>
+            <h1>Halaman Add Product</h1>
         </div>
     )
 }
