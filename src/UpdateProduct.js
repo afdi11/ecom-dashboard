@@ -2,7 +2,7 @@ import React from 'react';
 function UpdateProduct(){
     return(
         <div>
-            <h1>Halaman UpdateProduct</h1>
+            <h1>Halaman Update Product</h1>
         </div>
     )
 }
