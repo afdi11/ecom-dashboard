@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
 import { Button } from 'react-bootstrap';
+import React from 'react';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Afdi Fauzul Bahar Learning <code>React js</code> From youtube to Hero.
+          Afdi Fauzul Bahar is Learning <code>React js</code> From youtube to Hero.
         </p>
         <a
           className="App-link"
