@@ -1,16 +1,21 @@
 import React,{useState} from 'react';
 import { baseurl } from './services/api';
+import {useNavigate} from 'react-router-dom';
 function Register(){
     const[name,setName]=useState("");
     const[password,setPassword]=useState("");
     const[email,setEmail]=useState("");
+    const navigate = useNavigate();
 
     function signUp(){
         let item={name,password,email}
         console.log(item);
+        
         baseurl.post("register",item).then((res)=>{
             alert("Berhasil cuy");
             console.log(res);
+            localStorage.setItem("user-info",JSON.stringify(res))
+            navigate("/add");
         }).catch((err)=>{
             alert("Gagal",err);
             console.log(err);
