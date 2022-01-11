@@ -1,8 +1,9 @@
+import Header from './Header';
 import React from 'react';
 function Login(){
     return(
         <div>
-            <header/>
+            <Header/>
             <h1>Halaman Login</h1>
         </div>
     )

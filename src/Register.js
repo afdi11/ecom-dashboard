@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import Header from './Header';
+import React,{useState,useEffect} from 'react';
 import { baseurl } from './services/api';
 import {useNavigate} from 'react-router-dom';
 function Register(){
@@ -6,6 +7,7 @@ function Register(){
     const[password,setPassword]=useState("");
     const[email,setEmail]=useState("");
     const navigate = useNavigate();
+    useEffect()
 
     function signUp(){
         let item={name,password,email}
@@ -45,8 +47,10 @@ function Register(){
     }
 
     return(
+        <>
+        <Header/>
         <div className='col-sm-6 offset-sm-3'>
-            <header/>
+            
             <h1>Halaman Register</h1>
             <input 
                 type="text" 
@@ -76,6 +80,7 @@ function Register(){
                 Sign-Up
             </button>
         </div>
+        </>
     )
 }
 export default Register

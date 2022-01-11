@@ -1,8 +1,9 @@
+import Header from './Header';
 import React from 'react';
 function AddProduct(){
     return(
         <div>
-            <header/>
+            <Header/>
             <h1>Halaman Add Product</h1>
         </div>
     )
