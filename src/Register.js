@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { baseurl } from './services/api';
 function Register(){
     const[name,setName]=useState("");
     const[password,setPassword]=useState("");
@@ -6,17 +7,36 @@ function Register(){
 
     function signUp(){
         let item={name,password,email}
-        console.warn(item);
+        console.log(item);
+        baseurl.post("register",item).then((res)=>{
+            alert("Berhasil cuy");
+            console.log(res);
+        }).catch((err)=>{
+            alert("Gagal",err);
+            console.log(err);
+        })
         // const response = await axios.post("localhost:8000/api/register",item);
         // console.log(response);
+        // let result = await fetch("localhost:8000/api/register",{
+        //     method:'POST',
+        //     body:JSON.stringify(item),
+        //     headers:{
+        //         "content-type":'application/json',
+        //         Accept:'application/json',
+        //         // "Access-Control-Allow-Credentials" : true 
+        //     },
+        // })
+        // result = await result.json();
+        // console.warn("result : ", result)
         // fetch("localhost:8000/api/register",{
         //     method:'POST',
         //     body:JSON.stringify(item),
         //     headers:{
         //         "content-type":'application/json',
-        //         "Accept":'application/json'
-        //     }
-        // })
+        //         Accept:'application/json',
+        //         // "Access-Control-Allow-Credentials" : true 
+        //     },
+        // }).then((response)=>console.log(response))
     }
 
     return(
