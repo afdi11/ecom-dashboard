@@ -46,6 +46,7 @@ function Register(){
 
     return(
         <div className='col-sm-6 offset-sm-3'>
+            <header/>
             <h1>Halaman Register</h1>
             <input 
                 type="text" 

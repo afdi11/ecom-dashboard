@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>
+      {/* <Header/> */}
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -28,7 +28,6 @@ function App() {
           My Github
         </a>
       </header> */}
-      <h1>E-Commerce Dashboard</h1>
       <Routes>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Register" element={<Register/>}/>
