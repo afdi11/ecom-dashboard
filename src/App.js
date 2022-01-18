@@ -8,7 +8,7 @@ import Login from './Login';
 import Register from './Register';
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
- 
+import Protected from './protected';
 function App() {
   return (
     <div className="App">
@@ -31,8 +31,8 @@ function App() {
       <Routes>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Register" element={<Register/>}/>
-        <Route path="/Add" element={<AddProduct/>}/>
-        <Route path="/Update" element={<UpdateProduct/>}/>
+        <Route path="/Add" element={<Protected Cmp={AddProduct} />}/>
+        <Route path="/Update" element={<Protected Cmp={UpdateProduct}/>}/>
       </Routes>
       {/* <button>Simple HTML Button</button>
       <Button>Bootstrap Button</Button> */}

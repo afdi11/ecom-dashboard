@@ -7,7 +7,11 @@ function Register(){
     const[password,setPassword]=useState("");
     const[email,setEmail]=useState("");
     const navigate = useNavigate();
-    useEffect()
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            navigate("/add");
+        }
+    },[])
 
     function signUp(){
         let item={name,password,email}
