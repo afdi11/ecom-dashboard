@@ -17,10 +17,11 @@ function Header(){
         <div>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                <Navbar.Brand href="#home">e-Commerce</Navbar.Brand>
+                <Navbar.Brand href="/">e-Commerce</Navbar.Brand>
                 <Nav className="me-auto navbar-wrapper">
                     {localStorage.getItem("user-info")?(
                         <>
+                            <Link to="/list">Daftar Product</Link>
                             <Link to="/add">Add Product</Link>
                             <Link to="/update">Update Product</Link>
                         </>
@@ -33,7 +34,7 @@ function Header(){
                 </Nav>
                 {localStorage.getItem("user-info")?(
                 <>
-                    <Nav>
+                <Nav>
                     <NavDropdown title={user && user.data.email}>
                         <NavDropdown.ItemText onClick={logOut}>Logout</NavDropdown.ItemText>
                     </NavDropdown>

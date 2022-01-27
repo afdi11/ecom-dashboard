@@ -52,12 +52,12 @@ function AddProduct(){
                     placeholder='Harga...'
                     onChange={(e)=>setHarga(e.target.value)}
                 ></input>
-                <input 
+                <textarea 
                     type="text" 
                     className='form-control' 
                     placeholder='Descripsi...'
                     onChange={(e)=>setDeskripsi(e.target.value)}
-                ></input>
+                ></textarea>
                 <br/>
                 <button className='btn btn-primary'onClick={addProduct}>
                     Add Product
