@@ -40,3 +40,17 @@
 .navbar-wrapper a{
   padding-left: 30px;
 }
+
+.btnDelete{
+  background-color: red;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btnLogOut{
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}

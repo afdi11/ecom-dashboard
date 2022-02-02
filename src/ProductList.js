@@ -5,16 +5,25 @@ import { baseurl } from "./services/api";
 
 function ProductList(){
     const [data, setData] = useState([]);
-    useEffect(async() => {
+    useEffect(() => {
+        getData();
+    }, []);
+
+    async function deleteOperation(id){
+        let result = await baseurl.delete("delete"+id);
+        result=await result.json();
+        getData();
+    }
+
+    async function getData(){
         try {
             const response = await baseurl.get('listProduct');
             console.log(response.data);
             setData(response.data)
-            } catch (error) {
+        } catch (error) {
             console.error(error);
-            }
-    }, []);
-    console.log(data)
+        }
+    }
     return(
         <div>
             <Header/>
@@ -28,6 +37,7 @@ function ProductList(){
                         <th>Destinasi</th>
                         <th>Harga</th>
                         <th>Deskripsi</th>
+                        <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +57,9 @@ function ProductList(){
                             </td>
                             <td>
                                 {item.Deskripsi}
+                            </td>
+                            <td>
+                                <span className="btnDelete" onClick={()=>deleteOperation(item.ID)}>Delete</span>
                             </td>
                         </tr>
                     ))}

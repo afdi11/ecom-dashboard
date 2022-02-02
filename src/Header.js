@@ -36,7 +36,7 @@ function Header(){
                 <>
                 <Nav>
                     <NavDropdown title={user && user.data.email}>
-                        <NavDropdown.ItemText onClick={logOut}>Logout</NavDropdown.ItemText>
+                        <NavDropdown.ItemText onClick={logOut} className='btnLogOut'>Logout</NavDropdown.ItemText>
                     </NavDropdown>
                 </Nav>
                 </>
