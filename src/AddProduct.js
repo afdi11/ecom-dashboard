@@ -1,6 +1,8 @@
 import Header from './Header';
 import React,{useState} from 'react';
 import { baseurl } from './services/api';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function AddProduct(){
@@ -8,6 +10,7 @@ function AddProduct(){
     const [dokument,setFile]=useState("");
     const [price,setHarga]=useState("");
     const [deskripsi,setDeskripsi]=useState("");
+    const navigate = useNavigate();
     function addProduct(){
         console.log(nama,dokument,price,deskripsi);
         var formData=new FormData();
@@ -21,6 +24,7 @@ function AddProduct(){
         baseurl.post("addProduct",formData).then((result)=>{
             alert("Berhasil Menambahkan Product");
             console.log(result);
+            navigate("/list");
             // localStorage.setItem("user-info",JSON.stringify(result));
             // navigate("/add")
         }).catch((error)=>{
