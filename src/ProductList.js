@@ -2,6 +2,7 @@ import Header from "./Header";
 import React,{useEffect, useState} from "react";
 import { Table } from "react-bootstrap";
 import { baseurl } from "./services/api";
+import { Link } from "react-router-dom";
 
 function ProductList(){
     const [data, setData] = useState([]);
@@ -20,9 +21,9 @@ function ProductList(){
         alert(text);
         getData();
     }
-    function myFunction() {
+    function updateOperation() {
         
-      }
+    }
     async function getData(){
         try {
             const response = await baseurl.get('listProduct');
@@ -68,6 +69,9 @@ function ProductList(){
                             </td>
                             <td>
                                 <span className="btnDelete" onClick={()=>deleteOperation(item.ID)}>Delete</span>
+                                <Link to={"/update/"+item.ID}>
+                                    <span className="btnUpdate" onClick={()=>updateOperation(item.ID)}>Update</span>
+                                </Link>
                             </td>
                         </tr>
                     ))}

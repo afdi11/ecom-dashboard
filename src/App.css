@@ -54,3 +54,10 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.btnUpdate{
+  background-color: yellow;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -36,7 +36,7 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Register" element={<Register/>}/>
         <Route path="/Add" element={<Protected Cmp={AddProduct} />}/>
-        <Route path="/Update" element={<Protected Cmp={UpdateProduct}/>}/>
+        <Route path="/Update/:id" element={<Protected Cmp={UpdateProduct}/>}/>
       </Routes>
       {/* <button>Simple HTML Button</button>
       <Button>Bootstrap Button</Button> */}
