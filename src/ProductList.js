@@ -10,11 +10,19 @@ function ProductList(){
     }, []);
 
     async function deleteOperation(id){
-        let result = await baseurl.delete("delete"+id);
-        result=await result.json();
+        let text = "Apakah anda yakin akan menghapus product?\nPilih OK or Cancel.";
+        if (window.confirm(text) == true) {
+            text = "Berhasil Menghapus Product";
+            let result = await baseurl.delete("delete/"+id);
+        } else {
+            text = "Batal Menghapus Product";
+        }
+        alert(text);
         getData();
     }
-
+    function myFunction() {
+        
+      }
     async function getData(){
         try {
             const response = await baseurl.get('listProduct');
@@ -41,10 +49,10 @@ function ProductList(){
                         </tr>
                     </thead>
                     <tbody>
-                    {data.map((item)=>(
+                    {data.map((item,index)=>(
                         <tr>
                             <td>
-                                {item.ID}
+                                {index+1}
                             </td>
                             <td>
                                 <img style={{width:100}}src={"http://localhost:8000/"+item.File_path}></img>
