@@ -1,7 +1,10 @@
 import Header from './Header';
-import React from 'react';
-function UpdateProduct(props){
-    console.log("props",props);
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+function UpdateProduct(){
+    const [data, setData] = useState([]);
+    let props=useParams();
+    console.log(props);
     return(
         <div>
             <Header/>
