@@ -6,8 +6,13 @@ import { Link } from "react-router-dom";
 
 function ProductList(){
     const [data, setData] = useState([]);
+    
     useEffect(() => {
         getData();
+        // const intervalId = setInterval(() => {  
+        //     getData();
+        // }, 5000)
+        // return () => clearInterval(intervalId); //This is important
     }, []);
 
     async function deleteOperation(id){
@@ -19,7 +24,11 @@ function ProductList(){
             text = "Batal Menghapus Product";
         }
         alert(text);
-        getData();
+        // getData();
+        data.splice(data.findIndex(function(i){
+            return i.ID === id;
+        }), 1);
+        setData(data);
     }
     function updateOperation() {
         
@@ -37,6 +46,7 @@ function ProductList(){
         <div>
             <Header/>
             <h1>Product Lists</h1>
+            <br/>
             <div className="col-sm-8 offset-sm-2">
                 <Table striped bordered hover>
                     <thead>
