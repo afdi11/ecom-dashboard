@@ -56,7 +56,7 @@ function ProductList(){
                                 {index+1}
                             </td>
                             <td>
-                                <img style={{width:100}}src={"http://localhost:8000/"+item.File_path}></img>
+                                <img style={{width:100}} src={"http://localhost:8000/"+item.File_path}></img>
                             </td>
                             <td>
                                 {item.Nama}
