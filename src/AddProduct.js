@@ -3,8 +3,6 @@ import React,{useState} from 'react';
 import { baseurl } from './services/api';
 import { useNavigate } from 'react-router-dom';
 
-
-
 function AddProduct(){
     const [nama,setName]=useState("");
     const [dokument,setFile]=useState("");
@@ -54,8 +52,8 @@ function AddProduct(){
                     type="number" 
                     className='form-control' 
                     placeholder='Harga...'
-                    onChange={(e)=>setHarga(e.target.value)}
-                ></input>
+                    onChange={(e)=>setHarga(e.target.value)}>
+                </input>
                 <textarea 
                     type="text" 
                     className='form-control' 
