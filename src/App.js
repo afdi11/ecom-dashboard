@@ -10,6 +10,7 @@ import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
 import Protected from './protected';
 import ProductList from './ProductList';
+import SearchProduct from './SearchProduct'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/Add" element={<Protected Cmp={AddProduct} />}/>
         <Route path="/Update/:id" element={<Protected Cmp={UpdateProduct} props/>}/>
         <Route path="/Update" element={<Protected Cmp={ProductList}/>}/>
+        <Route path="/search" element={<SearchProduct/>}/>
       </Routes>
       {/* <button>Simple HTML Button</button>
       <Button>Bootstrap Button</Button> */}
