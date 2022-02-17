@@ -4,7 +4,7 @@ import { Navbar,
     Container,
     NavDropdown, } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
-
+import "./header.css"
 function Header(){
     const navigate = useNavigate();
     let user=JSON.parse(localStorage.getItem('user-info'));
@@ -21,15 +21,15 @@ function Header(){
                 <Nav className="me-auto navbar-wrapper">
                     {localStorage.getItem("user-info")?(
                         <>
-                            <Link to="/list">List Product</Link>
-                            <Link to="/add">Add Product</Link>
-                            <Link to="/update">Update Product</Link>
-                            <Link to="/search">Search Product</Link>
+                            <Link className='navbar_link' to="/list">List Product</Link>
+                            <Link className='navbar_link' to="/add">Add Product</Link>
+                            <Link className='navbar_link' to="/update">Update Product</Link>
+                            <Link className='navbar_link' to="/search">Search Product</Link>
                         </>
                     ):(
                         <>
-                            <Link to="/login">Login</Link>
-                            <Link to="/register">Register</Link>
+                            <Link className='navbar_link' to="/login">Login</Link>
+                            <Link className='navbar_link' to="/register">Register</Link>
                         </>
                     )}
                 </Nav>
