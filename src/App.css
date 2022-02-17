@@ -41,6 +41,9 @@
   padding-left: 30px;
 }
 
+td{
+  text-align: left;
+}
 .btnDelete{
   background-color: red;
   padding: 5px;
